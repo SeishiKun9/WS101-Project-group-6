@@ -1,15 +1,20 @@
+/* Global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poopins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: rgb(234, 248, 234);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.navbar{
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,31 +23,33 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo img{
+.logo img {
     width: 50px;
     height: 50px;
 }
 
-.logo h1{
+.logo h1 {
     color: #111;
     font-size: 2rem;
 }
-nav ul{
+
+nav ul {
     list-style: none;
     display: flex;
     gap: 90px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #111;
     font-weight: 500;
-    transition: color 0.3 ease;
+    transition: color 0.3s ease;
 }
 
 nav li {
@@ -50,29 +57,25 @@ nav li {
 }
 
 nav ul li a:hover,
-nav ul li a.Home{
-    color: rgb(63, 255, 133);
+nav ul li a.Feature,
+nav ul li a.About,
+nav ul li a.Contacts,
+nav ul li a.Home {
+    color: rgb(0, 0, 0);
 }
 
-.SignIn {
-    border: 1.5px solid #3fff85;
-    padding: 6px 14px;
-    border-radius: 20px;
-    color: rgb(63, 255, 133);
-    transition: all 0.3s ease;
-}
-
-.SignIn:hover {
-    background: rgb(63, 255, 133);
-    color: #fff;
-}
-
-.Yahoo{
+/* Sections */
+.Yahoo,
+.Brada,
+.Members,
+.Alahakbar {
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 80px 20px;
+}
+
+.Yahoo {
     height: 77vh;
 }
-
 
 .Yahoo h2 {
     font-size: 2.5rem;
@@ -80,7 +83,7 @@ nav ul li a.Home{
 }
 
 .Yahoo h2 span {
-    color: rgb(63, 255, 133);
+    color: rgb(54, 79, 63);
 }
 
 .Yahoo p {
@@ -89,39 +92,188 @@ nav ul li a.Home{
     font-size: 1.1rem;
 }
 
-.CLICKMEEE {
-    background: rgb(63, 255, 133);
-    color: #111;
+.Brada h2,
+.Members h2,
+.Alahakbar h2 {
+    color: rgb(54, 79, 63);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.Brada p,
+.Members p,
+.Alahakbar p {
+    color: grey;
+    font-size: 1rem;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.CLICKMEEE,
+.CLICKMEEE2 {
     padding: 12px 24px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.CLICKMEEE {
+    background: rgb(63, 255, 133);
+    color: #111;
+}
+
+.CLICKMEEE:hover {
+    background: rgb(63, 255, 133);
+    color: white;
 }
 
 .CLICKMEEE2 {
     background: white;
     color: #111;
-    padding: 12px 24px;
-    border-radius: 25px;
+}
+
+.CLICKMEEE2:hover {
+    color: rgb(63, 255, 133);
+}
+
+/* Cards / Boxes */
+.dogTags-container,
+.building1-container,
+.checkers ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+}
+
+.dogTags-box,
+.building2-box {
+    width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    transition: transform 0.3s ease;
+    height: auto;
+}
+
+.dogTags-box:hover,
+.building2-box:hover {
+    transform: translateY(-8px);
+}
+
+.dogTags-box img,
+.building2-box img {
+    width: 60px;
+    margin-bottom: 20px;
+    background: #3fff85;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.dogTags-box h3,
+.building2-box h3 {
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.dogTags-box p,
+.building2-box p {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* Checkers */
+.checkers li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.check-icon {
+    background-color: #4eff95;
+    color: black;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* Sign In / Log In Forms */
+.brada-container {
+    background: #fff;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.brada-containerable input[type="text"],
+.brada-containerable input[type="email"],
+.brada-containerable input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0 20px;
+    border-radius: 15px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+
+.brada-containerable p {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: grey;
+}
+
+.brada-containerable p a {
+    color: rgb(63, 255, 133);
     text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-.CLICKMEEE2:hover{
-    color: lime;
-    background: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.CLICKMEEE:hover{
-    color: white;
-    background: lime;
+.brada-containerable:hover {
+    color: rgb(63, 255, 133);
 }
 
+/* Footer */
 footer {
     text-align: center;
     background: #f9f9f9;
     padding: 20px;
     color: #777;
     font-size: 1rem;
+    margin-top: auto;
+}
+
+.building1-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;        
+}
+
+.building2-boxss {
+    flex: 0 0 calc(50% - 30px);
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
 }
